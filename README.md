@@ -32,3 +32,6 @@ Chinese Language Understanding Evaluation Benchmar
 | :----:|:-------:|:-------:|:-------:|:--------:|:-------:|
 | **ELICE-tiny**   | 7.69ms  | 9.23ms  | 8.56ms  |   7.59   |    -    | 
 | **ELICE-base**   | 12.71ms | 11.59ms | 13.61ms |  11.25   | 15.62ms | 
+
+## Model Architecture
+<img width="100%" src="https://github.com/bobo295246/ELICE/img/model.png"></a>
