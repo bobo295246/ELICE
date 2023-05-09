@@ -9,20 +9,24 @@ Created on Sun Jun  6 19:49:41 2021
 from _utils._utils_process import *
 from _utils._utils_model import *
 from _utils._utils_encoder import *
-from draw import *
+import argparse
+
+
+parser.add_argument('--version', type=int, default=6,
+                    help='模型版本')
+args = parser.parse_args()
 
 # %%
 # 設定專案與文本資料夾位置
 inf = 0
-projectPath = 'D:\\jask\\_aaai22_codedata'
-cluePath = projectPath + '\\_corpus\\CLUE'
+cluePath = '_corpus\\CLUE'
 
 # path of trained weights
-modelPath = projectPath + '\\_saved_models'
+modelPath ='_saved_models'
 
 # downstream task
 downstream = 'afqmc'  # afqmc, iflytek, ocnli, tnews
-version = 6
+version = args.version
 export_model = f'clue_{downstream}_v{version}'
 import_model = f'clue_{downstream}_v{version}'
 
@@ -366,7 +370,6 @@ print('[INFO] start for ELICE Pretraining')
 data_step = [datastep][0]
 error_array = []
 l_elice, l_task, l_acc = [], [], []
-epochs = 10
 for epoch in range(1, epochs + 1):
     epoch_start_time = time.time()
     Batch_Data = list_batchify(random.sample(tune_data_tr, k=sampling), batchs, shuffle=True)
@@ -543,10 +546,7 @@ for epoch in range(1, epochs + 1):
             |    best loss    {best_eval_loss}
             {'-' * 65}
               """, end='')
-        l_elice.append(loss_elice_)
-        l_task.append(evalloss_task_)
-        l_acc.append(accuracy_)
-save_loss(l_elice, l_task, l_acc, "afqmc_tiny")
+
 
 time.sleep(0.25)
 print()
