@@ -9,6 +9,15 @@ financial industry, and the fine-tuned ELICE outperforms the pre-trained baselin
 and the whitening representations. Those indicate the effectiveness, the robustness
 and the flexibility of ELICE in the field of language understanding.
 
+## Usage
+tiny version=4,base version=6  and  IMDb_classifier only base mode.
+```bash
+python  _clue_classifier_iflytek.py --version 4
+        _clue_classifier_afqmc_v2.py          6
+        _clue_classifier_ocnli.py
+        _clue_classifier_tnews.py
+        _IMDb_classifier_.py
+```
 Chinese Language Understanding Evaluation Benchmar
 ----------------------------------------------------------------------------
 ##### ELICE performance on CLUE
