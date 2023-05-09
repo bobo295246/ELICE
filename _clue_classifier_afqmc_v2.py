@@ -11,7 +11,7 @@ from _utils._utils_model import *
 from _utils._utils_encoder import *
 import argparse
 
-
+parser = argparse.ArgumentParser(description='命令式指令')
 parser.add_argument('--version', type=int, default=6,
                     help='模型版本')
 args = parser.parse_args()
